@@ -1,11 +1,8 @@
-<div class="jumbotron">
-  <h1 class="display-4">Ozone, world!</h1>
-  <p class="lead">This is the current ozone air quality readout for my neighborhood in Kathmandu.</p>
+<div class="jumbotron <%= @api_color %>">
+  <h1 class="display-4">Ozone, world! <%= @final_output %></h1>
+  <p class="lead">This is the current ozone air quality readout for my neighborhood in Washington.</p>
   <hr class="my-4">
   <p>Hit "Reload " in your web.</p>
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 <br>
-<div>
-  <% @output %>
-</div>
