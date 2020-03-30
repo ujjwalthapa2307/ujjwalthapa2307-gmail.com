@@ -31,5 +31,10 @@ class HomeController < ApplicationController
     elsif @final_output >= 301 && @final_output <= 500
       @api_color = "maroon"
     end
+    #Calling weather api
+    @weather_url = 'http://api.openweathermap.org/data/2.5/weather?q=London&appid=6714466a75ef7842af9d373139741d1d'
+    @weather_uri = URI(@weather_url)
+    @weather_response = Net::HTTP.get(@weather_uri)
+    @weather_output = JSON.parse(@weather_response)
   end
 end
