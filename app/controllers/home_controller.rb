@@ -32,9 +32,17 @@ class HomeController < ApplicationController
       @api_color = "maroon"
     end
     #Calling weather api
-    @weather_url = 'http://api.openweathermap.org/data/2.5/weather?q=London&appid=6714466a75ef7842af9d373139741d1d'
+    @weather_url = 'http://api.openweathermap.org/data/2.5/weather?q=kathmandu&appid=6714466a75ef7842af9d373139741d1d'
     @weather_uri = URI(@weather_url)
     @weather_response = Net::HTTP.get(@weather_uri)
     @weather_output = JSON.parse(@weather_response)
+    @weather_currenttemp = @weather_output["main"]["temp_max"]
+    @weather_humidity = @weather_output["main"]["humidity"]
+    @weather_wind = @weather_output["wind"]["speed"]
+    @weather_visibilty = @weather_output["main"]["pressure"]
+    @weather_sunrise = @weather_output["sys"]["sunrise"]
+    @weather_sunset = @weather_output["sys"]["sunset"]
+    @weather_lon = @weather_output["coord"]["lon"]
+    @weather_lat = @weather_output["coord"]["lat"]
   end
 end

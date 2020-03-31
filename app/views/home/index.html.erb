@@ -6,4 +6,50 @@
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
 <br>
-<%= @weather_output %>
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">kathmandu</th>
+      <th scope="col">Weather</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Current Temperature</td>
+      <td><%= @weather_currenttemp - 273.15 %> °C </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Humidity</td>
+      <td><%= @weather_humidity %> % </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Wind Speed</td>
+      <td><%= @weather_wind %> km/hr </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Visibility</td>
+      <td><%= @weather_visibilty %> hpa </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Sun Rise</td>
+      <td><%= Time.at(@weather_sunrise) %></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Sunset</td>
+      <td><%= Time.at(@weather_sunset) %></td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Geo Cordinates</td>
+      <td>[ <%= @weather_lon%> : <%= @weather_lat %> ]</td>
+    </tr>
+
+  </tbody>
+</table>
