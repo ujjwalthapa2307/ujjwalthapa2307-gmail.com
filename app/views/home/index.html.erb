@@ -1,10 +1,59 @@
 <div class="jumbotron <%= @api_color %>">
-  <h1 class="display-4">Ozone, world! <%= @final_output %></h1>
-  <p class="lead">This is the current ozone air quality readout for my neighborhood in Washington.</p>
+  <h1 class="display-4">Ozone, Tokyo! <%= @final_output %></h1>
+  <p class="lead">This is the current ozone air quality readout for my neighborhood in Tokyo.</p>
   <hr class="my-4">
   <p>Hit "Reload " in your web.</p>
   <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
+<table class="table table-sm table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Tokyo</th>
+      <th scope="col">Weather</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Current Temperature</td>
+      <td><%= @weather_currenttemp_tokyo - 273 %> °C </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Humidity</td>
+      <td><%= @weather_humidity_tokyo %> % </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Wind Speed</td>
+      <td><%= @weather_wind_tokyo %> km/hr </td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>Pressure</td>
+      <td><%= @weather_pressure_tokyo %> hpa </td>
+    </tr>
+    <tr>
+      <th scope="row">5</th>
+      <td>Sun Rise</td>
+      <td><%= Time.at(@weather_sunrise_tokyo) %></td>
+    </tr>
+    <tr>
+      <th scope="row">6</th>
+      <td>Sunset</td>
+      <td><%= Time.at(@weather_sunset_tokyo) %></td>
+    </tr>
+    <tr>
+      <th scope="row">7</th>
+      <td>Geo Cordinates</td>
+      <td>[ <%= @weather_lon_tokyo%> : <%= @weather_lat_tokyo %> ]</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<br>
 <br>
 <table class="table table-sm table-dark">
   <thead>
@@ -31,22 +80,22 @@
       <td><%= @weather_wind %> km/hr </td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>Visibility</td>
-      <td><%= @weather_visibilty %> hpa </td>
+      <th scope="row">4</th>
+      <td>Pressure</td>
+      <td><%= @weather_pressure %> hpa </td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th scope="row">5</th>
       <td>Sun Rise</td>
       <td><%= Time.at(@weather_sunrise) %></td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th scope="row">6</th>
       <td>Sunset</td>
       <td><%= Time.at(@weather_sunset) %></td>
     </tr>
     <tr>
-      <th scope="row">3</th>
+      <th scope="row">7</th>
       <td>Geo Cordinates</td>
       <td>[ <%= @weather_lon%> : <%= @weather_lat %> ]</td>
     </tr>
