@@ -17,7 +17,9 @@ class HomeController < ApplicationController
       #@final_output = @output[0]['AQI']
       @final_output = @output["data"]["aqi"]
     end
-
+if(@final_output == "-")
+  @api_color == "gray"
+else
     if @final_output == "ERROR"
       @api_color = "gray"
     elsif @final_output > 0 && @final_output<= 50
@@ -33,6 +35,7 @@ class HomeController < ApplicationController
     elsif @final_output >= 301 && @final_output <= 500
       @api_color = "maroon"
     end
+  end
     #Calling weather api of kathmandu
     @weather_url = 'http://api.openweathermap.org/data/2.5/weather?q=kathmandu&appid=6714466a75ef7842af9d373139741d1d'
     @weather_uri = URI(@weather_url)
